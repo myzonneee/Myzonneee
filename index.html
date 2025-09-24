@@ -1,0 +1,1762 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zona Putra Pratama - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'blue-calm': '#0ea5e9',
+                        'blue-soft': '#38bdf8',
+                        'blue-light': '#7dd3fc',
+                        'blue-deep': '#0284c7',
+                        'teal-fresh': '#14b8a6',
+                        'cyan-cool': '#06b6d4',
+                        'purple-vibrant': '#8b5cf6',
+                        'pink-bright': '#ec4899',
+                        'orange-warm': '#f97316',
+                        'green-fresh': '#10b981',
+                        'indigo-deep': '#4f46e5',
+                        'rose-soft': '#f43f5e'
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gradient-to-br from-purple-50 via-blue-50 via-cyan-50 to-pink-50 min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-gradient-to-r from-purple-600 via-blue-calm to-teal-fresh shadow-xl sticky top-0 z-50 backdrop-blur-md border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-3">
+                <!-- Logo/Brand -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full flex items-center justify-center shadow-lg">
+                        <span class="text-white font-bold text-lg">ZP</span>
+                    </div>
+                    <div class="text-white font-bold text-xl tracking-wide">Zona Putra Pratama</div>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden lg:flex items-center space-x-1">
+                    <a href="#home" class="nav-link text-white hover:text-yellow-300 px-4 py-2 rounded-lg transition-all duration-300 hover:bg-white/10">
+                        <i class="fas fa-home mr-2"></i>Beranda
+                    </a>
+                    <a href="#about" class="nav-link text-white hover:text-yellow-300 px-4 py-2 rounded-lg transition-all duration-300 hover:bg-white/10">
+                        <i class="fas fa-user mr-2"></i>Tentang
+                    </a>
+                    <a href="#education" class="nav-link text-white hover:text-yellow-300 px-4 py-2 rounded-lg transition-all duration-300 hover:bg-white/10">
+                        <i class="fas fa-graduation-cap mr-2"></i>Pendidikan
+                    </a>
+                    <a href="#experience" class="nav-link text-white hover:text-yellow-300 px-4 py-2 rounded-lg transition-all duration-300 hover:bg-white/10">
+                        <i class="fas fa-briefcase mr-2"></i>Pengalaman
+                    </a>
+                    <a href="#achievements" class="nav-link text-white hover:text-yellow-300 px-4 py-2 rounded-lg transition-all duration-300 hover:bg-white/10">
+                        <i class="fas fa-trophy mr-2"></i>Prestasi
+                    </a>
+                    <a href="#portfolio" class="nav-link text-white hover:text-yellow-300 px-4 py-2 rounded-lg transition-all duration-300 hover:bg-white/10">
+                        <i class="fas fa-folder mr-2"></i>Portfolio
+                    </a>
+                    <a href="#contact" class="nav-link text-white hover:text-yellow-300 px-4 py-2 rounded-lg transition-all duration-300 hover:bg-white/10">
+                        <i class="fas fa-envelope mr-2"></i>Kontak
+                    </a>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="hidden lg:flex items-center space-x-3">
+                    <button onclick="downloadCV()" class="bg-gradient-to-r from-yellow-400 to-orange-500 text-white px-5 py-2.5 rounded-lg hover:from-yellow-500 hover:to-orange-600 transition-all duration-300 transform hover:scale-105 font-semibold shadow-lg hover:shadow-xl">
+                        <i class="fas fa-download mr-2"></i>Download CV
+                    </button>
+                    <button onclick="showAdminLogin()" class="text-white hover:text-yellow-300 p-2.5 rounded-lg transition-all duration-300 hover:bg-white/10" title="Admin Panel">
+                        <i class="fas fa-cog text-lg"></i>
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="lg:hidden text-white p-2 rounded-lg hover:bg-white/10 transition-all duration-300" onclick="toggleMobileMenu()" id="mobileMenuBtn">
+                    <div class="w-6 h-6 flex flex-col justify-center items-center space-y-1">
+                        <div class="w-6 h-0.5 bg-white transition-all duration-300 transform" id="line1"></div>
+                        <div class="w-6 h-0.5 bg-white transition-all duration-300" id="line2"></div>
+                        <div class="w-6 h-0.5 bg-white transition-all duration-300 transform" id="line3"></div>
+                    </div>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="lg:hidden overflow-hidden transition-all duration-300 max-h-0">
+                <div class="py-4 space-y-2 border-t border-white/10">
+                    <a href="#home" class="mobile-nav-link flex items-center text-white py-3 px-4 rounded-lg hover:bg-white/10 transition-all duration-300">
+                        <i class="fas fa-home mr-3 w-5"></i>Beranda
+                    </a>
+                    <a href="#about" class="mobile-nav-link flex items-center text-white py-3 px-4 rounded-lg hover:bg-white/10 transition-all duration-300">
+                        <i class="fas fa-user mr-3 w-5"></i>Tentang
+                    </a>
+                    <a href="#education" class="mobile-nav-link flex items-center text-white py-3 px-4 rounded-lg hover:bg-white/10 transition-all duration-300">
+                        <i class="fas fa-graduation-cap mr-3 w-5"></i>Pendidikan
+                    </a>
+                    <a href="#experience" class="mobile-nav-link flex items-center text-white py-3 px-4 rounded-lg hover:bg-white/10 transition-all duration-300">
+                        <i class="fas fa-briefcase mr-3 w-5"></i>Pengalaman
+                    </a>
+                    <a href="#achievements" class="mobile-nav-link flex items-center text-white py-3 px-4 rounded-lg hover:bg-white/10 transition-all duration-300">
+                        <i class="fas fa-trophy mr-3 w-5"></i>Prestasi
+                    </a>
+                    <a href="#portfolio" class="mobile-nav-link flex items-center text-white py-3 px-4 rounded-lg hover:bg-white/10 transition-all duration-300">
+                        <i class="fas fa-folder mr-3 w-5"></i>Portfolio
+                    </a>
+                    <a href="#contact" class="mobile-nav-link flex items-center text-white py-3 px-4 rounded-lg hover:bg-white/10 transition-all duration-300">
+                        <i class="fas fa-envelope mr-3 w-5"></i>Kontak
+                    </a>
+                    <div class="pt-3 border-t border-white/10 space-y-2">
+                        <button onclick="downloadCV()" class="w-full flex items-center text-white py-3 px-4 rounded-lg hover:bg-white/10 transition-all duration-300">
+                            <i class="fas fa-download mr-3 w-5"></i>Download CV
+                        </button>
+                        <button onclick="showAdminLogin()" class="w-full flex items-center text-white py-3 px-4 rounded-lg hover:bg-white/10 transition-all duration-300">
+                            <i class="fas fa-cog mr-3 w-5"></i>Admin Panel
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="py-20">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <div class="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl p-12 mx-auto max-w-4xl border border-purple-200/30">
+                <div class="w-32 h-32 bg-gradient-to-br from-purple-vibrant via-pink-bright to-orange-warm rounded-full mx-auto mb-8 flex items-center justify-center shadow-lg">
+                    <img id="profileImage" src="" alt="Profile" class="w-full h-full rounded-full object-cover hidden">
+                    <i id="profileIcon" class="fas fa-user text-white text-4xl"></i>
+                </div>
+                <h1 id="heroName" class="text-4xl md:text-5xl font-bold bg-gradient-to-r from-purple-vibrant to-pink-bright bg-clip-text text-transparent mb-4">Zona Putra Pratama</h1>
+                <p id="heroTitle" class="text-xl text-orange-warm mb-8 font-semibold">Rekayasa Perangkat Lunak</p>
+                <p id="heroDescription" class="text-gray-600 text-lg leading-relaxed max-w-2xl mx-auto">
+                    Siswa SMK dengan passion di bidang pengembangan perangkat lunak. 
+                    Berfokus pada teknologi web modern dan pengembangan aplikasi.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-gradient-to-r from-purple-50/50 via-pink-50/50 to-orange-50/50 backdrop-blur-sm">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center bg-gradient-to-r from-purple-vibrant to-pink-bright bg-clip-text text-transparent mb-12">Tentang Saya</h2>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div class="bg-gradient-to-br from-purple-vibrant via-indigo-deep to-blue-calm rounded-2xl p-8 text-white shadow-lg">
+                        <h3 class="text-2xl font-bold mb-4">Profil Singkat</h3>
+                        <p id="aboutText" class="leading-relaxed">
+                            Saya adalah siswa yang berdedikasi dalam bidang Rekayasa Perangkat Lunak. 
+                            Memiliki minat besar dalam pengembangan web, mobile apps, dan teknologi terkini. 
+                            Selalu antusias untuk belajar hal-hal baru dan mengembangkan keterampilan programming.
+                        </p>
+                    </div>
+                </div>
+                <div class="space-y-6">
+                    <div class="bg-gradient-to-r from-purple-50 to-pink-50 backdrop-blur-sm rounded-xl p-6 border border-purple-200/30">
+                        <h4 class="font-bold text-purple-vibrant mb-2">Keahlian Utama</h4>
+                        <div id="skillsList" class="flex flex-wrap gap-2">
+                            <span class="bg-gradient-to-r from-purple-vibrant to-pink-bright text-white px-3 py-1 rounded-full text-sm">HTML/CSS</span>
+                            <span class="bg-gradient-to-r from-blue-calm to-teal-fresh text-white px-3 py-1 rounded-full text-sm">JavaScript</span>
+                            <span class="bg-gradient-to-r from-orange-warm to-rose-soft text-white px-3 py-1 rounded-full text-sm">PHP</span>
+                            <span class="bg-gradient-to-r from-green-fresh to-teal-fresh text-white px-3 py-1 rounded-full text-sm">MySQL</span>
+                        </div>
+                    </div>
+                    <div class="bg-gradient-to-r from-blue-50 to-teal-50 backdrop-blur-sm rounded-xl p-6 border border-blue-200/30">
+                        <h4 class="font-bold text-blue-calm mb-2">Minat & Hobi</h4>
+                        <p id="hobbiesText" class="text-gray-600">
+                            Coding, membaca artikel teknologi, bermain game, dan eksplorasi framework baru.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-16">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-blue-deep mb-12">Pendidikan</h2>
+            <div class="max-w-3xl mx-auto">
+                <div class="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl p-8 border border-blue-light/20">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 bg-gradient-to-br from-blue-calm to-teal-fresh rounded-full flex items-center justify-center mr-6 shadow-lg">
+                            <i class="fas fa-graduation-cap text-white text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 id="schoolName" class="text-2xl font-bold text-blue-deep">SMKS Krian 1 Sidoarjo</h3>
+                            <p id="major" class="text-teal-fresh font-semibold">Rekayasa Perangkat Lunak</p>
+                        </div>
+                    </div>
+                    <div class="border-l-4 border-blue-calm pl-6">
+                        <p id="educationDescription" class="text-gray-600 leading-relaxed">
+                            Sedang menempuh pendidikan di SMK dengan fokus pada pengembangan perangkat lunak. 
+                            Mempelajari berbagai bahasa pemrograman, database management, dan metodologi pengembangan software.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-16 bg-white/50 backdrop-blur-sm">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-blue-deep mb-12">Pengalaman</h2>
+            <div id="experienceList" class="space-y-6">
+                <div class="bg-white/80 backdrop-blur-sm rounded-xl shadow-lg p-6 border border-blue-light/20">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 bg-gradient-to-br from-blue-calm to-teal-fresh rounded-full flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-briefcase text-white"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold text-blue-deep mb-2">Praktek Kerja Lapangan (PKL)</h3>
+                            <p class="text-teal-fresh font-semibold mb-2">PT. Teknologi Digital Indonesia</p>
+                            <p class="text-gray-600 mb-2">Juni 2024 - Agustus 2024</p>
+                            <p class="text-gray-700">Mengembangkan aplikasi web menggunakan PHP dan MySQL. Belajar tentang workflow pengembangan software di industri.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-8">
+                <p class="text-gray-500 italic">Pengalaman akan terus bertambah seiring perjalanan karir</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements" class="py-16">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-blue-deep mb-12">Prestasi & Sertifikat</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="achievementsList">
+                <div class="bg-white/80 backdrop-blur-sm rounded-xl shadow-lg p-6 border border-blue-light/20 text-center">
+                    <div class="w-16 h-16 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-trophy text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-blue-deep mb-2">Juara 2 Lomba Web Design</h3>
+                    <p class="text-teal-fresh font-semibold mb-2">Tingkat Kabupaten Sidoarjo</p>
+                    <p class="text-gray-600 text-sm">2024</p>
+                </div>
+                <div class="bg-white/80 backdrop-blur-sm rounded-xl shadow-lg p-6 border border-blue-light/20 text-center">
+                    <div class="w-16 h-16 bg-gradient-to-br from-blue-calm to-teal-fresh rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-certificate text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-blue-deep mb-2">Sertifikat HTML & CSS</h3>
+                    <p class="text-teal-fresh font-semibold mb-2">Dicoding Indonesia</p>
+                    <p class="text-gray-600 text-sm">2024</p>
+                </div>
+                <div class="bg-white/80 backdrop-blur-sm rounded-xl shadow-lg p-6 border border-blue-light/20 text-center">
+                    <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-medal text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-blue-deep mb-2">Best Student Award</h3>
+                    <p class="text-teal-fresh font-semibold mb-2">SMKS Krian 1 Sidoarjo</p>
+                    <p class="text-gray-600 text-sm">2023</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-16">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-blue-deep mb-12">Portfolio</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="portfolioList">
+                <!-- Portfolio items will be populated here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-white/50 backdrop-blur-sm">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-blue-deep mb-12">Kontak</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-gradient-to-br from-blue-calm to-blue-deep rounded-xl p-6 text-white text-center hover:scale-105 transition-transform shadow-lg">
+                    <i class="fas fa-phone text-3xl mb-4"></i>
+                    <h3 class="font-bold mb-2">Telepon</h3>
+                    <a href="tel:088989423247" id="phoneLink" class="hover:text-blue-light transition-colors">088989423247</a>
+                </div>
+                <div class="bg-gradient-to-br from-teal-fresh to-cyan-cool rounded-xl p-6 text-white text-center hover:scale-105 transition-transform shadow-lg">
+                    <i class="fas fa-envelope text-3xl mb-4"></i>
+                    <h3 class="font-bold mb-2">Email</h3>
+                    <a href="mailto:zonaputrapratama98@gmail.com" id="emailLink" class="hover:text-blue-light transition-colors break-all">zonaputrapratama98@gmail.com</a>
+                </div>
+                <div class="bg-gradient-to-br from-pink-500 to-purple-600 rounded-xl p-6 text-white text-center hover:scale-105 transition-transform shadow-lg">
+                    <i class="fab fa-instagram text-3xl mb-4"></i>
+                    <h3 class="font-bold mb-2">Instagram</h3>
+                    <a href="https://instagram.com/myzonneee" target="_blank" rel="noopener noreferrer" id="instagramLink" class="hover:text-pink-200 transition-colors">@myzonneee</a>
+                </div>
+                <div class="bg-gradient-to-br from-emerald-500 to-teal-600 rounded-xl p-6 text-white text-center hover:scale-105 transition-transform shadow-lg">
+                    <i class="fas fa-map-marker-alt text-3xl mb-4"></i>
+                    <h3 class="font-bold mb-2">Lokasi</h3>
+                    <p id="locationText">Sidoarjo, Jawa Timur</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-r from-blue-deep to-teal-fresh text-white py-8">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <p>&copy; 2024 Zona Putra Pratama. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Admin Login Modal -->
+    <div id="adminLoginModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+        <div class="bg-white rounded-2xl p-8 max-w-md w-full mx-4">
+            <h3 class="text-2xl font-bold text-navy mb-6 text-center">Login Admin</h3>
+            <form onsubmit="handleAdminLogin(event)">
+                <div class="mb-4">
+                    <label class="block text-gray-700 font-semibold mb-2">Username</label>
+                    <input type="text" id="adminUsername" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-navy" required>
+                </div>
+                <div class="mb-6">
+                    <label class="block text-gray-700 font-semibold mb-2">Password</label>
+                    <input type="password" id="adminPassword" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-navy" required>
+                </div>
+                <div class="flex gap-4">
+                    <button type="submit" class="flex-1 bg-gradient-to-r from-blue-calm to-teal-fresh text-white py-3 rounded-lg hover:from-blue-600 hover:to-teal-600 transition-all duration-300 font-semibold shadow-lg hover:shadow-xl transform hover:scale-105">
+                        <i class="fas fa-sign-in-alt mr-2"></i>Login
+                    </button>
+                    <button type="button" onclick="hideAdminLogin()" class="flex-1 bg-gradient-to-r from-gray-400 to-gray-500 text-white py-3 rounded-lg hover:from-gray-500 hover:to-gray-600 transition-all duration-300 font-semibold shadow-lg hover:shadow-xl transform hover:scale-105">
+                        <i class="fas fa-times mr-2"></i>Batal
+                    </button>
+                </div>
+            </form>
+            <div id="loginError" class="hidden mt-4 p-3 bg-red-100 text-red-700 rounded-lg text-center"></div>
+        </div>
+    </div>
+
+    <!-- Admin Panel -->
+    <div id="adminPanel" class="fixed inset-0 bg-white hidden z-50 overflow-y-auto">
+        <div class="bg-gradient-to-r from-blue-calm to-teal-fresh text-white p-4">
+            <div class="flex justify-between items-center max-w-6xl mx-auto">
+                <h2 class="text-2xl font-bold">Panel Admin - Edit Portfolio</h2>
+                <button onclick="logoutAdmin()" class="bg-red-600 hover:bg-red-700 px-4 py-2 rounded-lg transition-colors">
+                    <i class="fas fa-sign-out-alt mr-2"></i>Logout
+                </button>
+            </div>
+        </div>
+        
+        <div class="max-w-6xl mx-auto p-6">
+            <!-- Tab Navigation -->
+            <div class="flex flex-wrap gap-2 mb-8 bg-gradient-to-r from-purple-50 to-pink-50 p-2 rounded-lg">
+                <button onclick="showTab('personal')" id="personalTab" class="px-4 py-2 rounded-lg bg-gradient-to-r from-purple-vibrant to-pink-bright text-white font-semibold">Profil</button>
+                <button onclick="showTab('education')" id="educationTab" class="px-4 py-2 rounded-lg text-purple-vibrant hover:bg-purple-100">Pendidikan</button>
+                <button onclick="showTab('skills')" id="skillsTab" class="px-4 py-2 rounded-lg text-purple-vibrant hover:bg-purple-100">Keahlian</button>
+                <button onclick="showTab('experience')" id="experienceTab" class="px-4 py-2 rounded-lg text-purple-vibrant hover:bg-purple-100">Pengalaman</button>
+                <button onclick="showTab('achievements')" id="achievementsTab" class="px-4 py-2 rounded-lg text-purple-vibrant hover:bg-purple-100">Prestasi</button>
+                <button onclick="showTab('portfolio')" id="portfolioTab" class="px-4 py-2 rounded-lg text-purple-vibrant hover:bg-purple-100">Portfolio</button>
+                <button onclick="showTab('contact')" id="contactTab" class="px-4 py-2 rounded-lg text-purple-vibrant hover:bg-purple-100">Kontak</button>
+            </div>
+
+            <!-- Personal Tab -->
+            <div id="personalTabContent" class="tab-content">
+                <div class="grid lg:grid-cols-2 gap-8">
+                    <div class="bg-white rounded-xl shadow-lg p-6 border border-blue-light/20">
+                        <h3 class="text-xl font-bold text-blue-deep mb-4">Informasi Pribadi</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-gray-700 font-semibold mb-2">Foto Profil</label>
+                                <input type="file" id="profileImageInput" accept="image/*" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-calm">
+                                <p class="text-sm text-gray-500 mt-1">Upload gambar untuk foto profil</p>
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 font-semibold mb-2">Upload CV (PDF/DOC)</label>
+                                <input type="file" id="cvFileInput" accept=".pdf,.doc,.docx" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-calm">
+                                <p class="text-sm text-gray-500 mt-1">Upload file CV untuk mengganti CV otomatis</p>
+                                <div id="cvFileStatus" class="mt-2 text-sm">
+                                    <span id="currentCvStatus" class="text-gray-600">Status: Menggunakan CV otomatis</span>
+                                    <button id="removeCvBtn" onclick="removeCVFile()" class="hidden ml-2 text-red-600 hover:text-red-800 text-xs">
+                                        <i class="fas fa-times mr-1"></i>Hapus CV
+                                    </button>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 font-semibold mb-2">Nama Lengkap</label>
+                                <input type="text" id="editName" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-calm">
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 font-semibold mb-2">Judul/Posisi</label>
+                                <input type="text" id="editTitle" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-calm">
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 font-semibold mb-2">Deskripsi Hero</label>
+                                <textarea id="editHeroDescription" rows="3" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-calm"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-xl shadow-lg p-6 border border-blue-light/20">
+                        <h3 class="text-xl font-bold text-blue-deep mb-4">Tentang Saya</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-gray-700 font-semibold mb-2">Teks Tentang</label>
+                                <textarea id="editAboutText" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-calm"></textarea>
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 font-semibold mb-2">Hobi & Minat</label>
+                                <textarea id="editHobbies" rows="2" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-calm"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Education Tab -->
+            <div id="educationTabContent" class="tab-content hidden">
+                <div class="bg-white rounded-xl shadow-lg p-6 border border-purple-200/30">
+                    <h3 class="text-xl font-bold text-purple-vibrant mb-4">Pendidikan</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">Nama Sekolah</label>
+                            <input type="text" id="editSchool" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-purple-vibrant">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">Jurusan</label>
+                            <input type="text" id="editMajor" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-purple-vibrant">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">Deskripsi Pendidikan</label>
+                            <textarea id="editEducationDesc" rows="3" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-purple-vibrant"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Skills Tab -->
+            <div id="skillsTabContent" class="tab-content hidden">
+                <div class="bg-white rounded-xl shadow-lg p-6 border border-purple-200/30">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="text-xl font-bold text-purple-vibrant">Keahlian Utama</h3>
+                        <button onclick="addSkill()" class="bg-gradient-to-r from-purple-vibrant to-pink-bright hover:from-purple-600 hover:to-pink-600 text-white px-4 py-2 rounded-lg transition-colors">
+                            <i class="fas fa-plus mr-2"></i>Tambah Keahlian
+                        </button>
+                    </div>
+                    <div id="skillsEditList" class="space-y-4">
+                        <!-- Skills items will be populated here -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Experience Tab -->
+            <div id="experienceTabContent" class="tab-content hidden">
+                <div class="bg-white rounded-xl shadow-lg p-6 border border-blue-light/20">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="text-xl font-bold text-blue-deep">Pengalaman</h3>
+                        <button onclick="addExperience()" class="bg-blue-calm hover:bg-blue-deep text-white px-4 py-2 rounded-lg transition-colors">
+                            <i class="fas fa-plus mr-2"></i>Tambah Pengalaman
+                        </button>
+                    </div>
+                    <div id="experienceEditList" class="space-y-4">
+                        <!-- Experience items will be populated here -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Achievements Tab -->
+            <div id="achievementsTabContent" class="tab-content hidden">
+                <div class="bg-white rounded-xl shadow-lg p-6 border border-blue-light/20">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="text-xl font-bold text-blue-deep">Prestasi & Sertifikat</h3>
+                        <button onclick="addAchievement()" class="bg-blue-calm hover:bg-blue-deep text-white px-4 py-2 rounded-lg transition-colors">
+                            <i class="fas fa-plus mr-2"></i>Tambah Prestasi
+                        </button>
+                    </div>
+                    <div id="achievementEditList" class="space-y-4">
+                        <!-- Achievement items will be populated here -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Portfolio Tab -->
+            <div id="portfolioTabContent" class="tab-content hidden">
+                <div class="bg-white rounded-xl shadow-lg p-6 border border-blue-light/20">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="text-xl font-bold text-blue-deep">Portfolio Projects</h3>
+                        <button onclick="addPortfolio()" class="bg-blue-calm hover:bg-blue-deep text-white px-4 py-2 rounded-lg transition-colors">
+                            <i class="fas fa-plus mr-2"></i>Tambah Project
+                        </button>
+                    </div>
+                    <div id="portfolioEditList" class="space-y-4">
+                        <!-- Portfolio items will be populated here -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Tab -->
+            <div id="contactTabContent" class="tab-content hidden">
+                <div class="bg-white rounded-xl shadow-lg p-6 border border-blue-light/20">
+                    <h3 class="text-xl font-bold text-blue-deep mb-4">Informasi Kontak</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">Nomor Telepon</label>
+                            <input type="text" id="editPhone" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-calm">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">Email</label>
+                            <input type="email" id="editEmail" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-calm">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">Instagram Username</label>
+                            <input type="text" id="editInstagram" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-calm" placeholder="myzonneee">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">Lokasi</label>
+                            <input type="text" id="editLocation" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-calm">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Save Button -->
+            <div class="mt-8 text-center space-y-4">
+                <div>
+                    <button onclick="saveChanges()" class="bg-blue-calm hover:bg-blue-deep text-white px-8 py-3 rounded-lg font-semibold transition-colors shadow-lg mr-4">
+                        <i class="fas fa-save mr-2"></i>Simpan Perubahan
+                    </button>
+                </div>
+                
+                <!-- Backup & Restore Section -->
+                <div class="bg-gradient-to-r from-purple-50 to-pink-50 p-6 rounded-xl border border-purple-200/30">
+                    <h4 class="text-lg font-bold text-purple-vibrant mb-4">Backup & Restore Data</h4>
+                    <div class="flex flex-wrap gap-4 justify-center">
+                        <button onclick="exportData()" class="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white px-6 py-2 rounded-lg font-semibold transition-colors">
+                            <i class="fas fa-download mr-2"></i>Export Backup
+                        </button>
+                        <label class="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white px-6 py-2 rounded-lg font-semibold transition-colors cursor-pointer">
+                            <i class="fas fa-upload mr-2"></i>Import Backup
+                            <input type="file" accept=".json" onchange="importData(event)" class="hidden">
+                        </label>
+                        <button onclick="resetToDefault()" class="bg-gradient-to-r from-gray-500 to-gray-600 hover:from-gray-600 hover:to-gray-700 text-white px-6 py-2 rounded-lg font-semibold transition-colors">
+                            <i class="fas fa-undo mr-2"></i>Reset Default
+                        </button>
+                    </div>
+                    <p class="text-sm text-gray-600 mt-3 text-center">
+                        Export untuk membuat backup file, Import untuk memulihkan data dari backup
+                    </p>
+                </div>
+            </div>
+
+            <!-- Success Message -->
+            <div id="saveSuccess" class="hidden mt-4 p-4 bg-green-100 text-green-700 rounded-lg text-center max-w-md mx-auto">
+                <i class="fas fa-check-circle mr-2"></i>Perubahan berhasil disimpan secara permanen!
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Data storage with localStorage support
+        let portfolioData = JSON.parse(localStorage.getItem('portfolioData')) || {
+            name: "Zona Putra Pratama",
+            title: "Rekayasa Perangkat Lunak",
+            heroDescription: "Siswa SMK dengan passion di bidang pengembangan perangkat lunak. Berfokus pada teknologi web modern dan pengembangan aplikasi.",
+            aboutText: "Saya adalah siswa yang berdedikasi dalam bidang Rekayasa Perangkat Lunak. Memiliki minat besar dalam pengembangan web, mobile apps, dan teknologi terkini. Selalu antusias untuk belajar hal-hal baru dan mengembangkan keterampilan programming.",
+            hobbies: "Coding, membaca artikel teknologi, bermain game, dan eksplorasi framework baru.",
+            school: "SMKS Krian 1 Sidoarjo",
+            major: "Rekayasa Perangkat Lunak",
+            educationDesc: "Sedang menempuh pendidikan di SMK dengan fokus pada pengembangan perangkat lunak. Mempelajari berbagai bahasa pemrograman, database management, dan metodologi pengembangan software.",
+            phone: "088989423247",
+            email: "zonaputrapratama98@gmail.com",
+            instagram: "myzonneee",
+            location: "Sidoarjo, Jawa Timur",
+            profileImage: "",
+            cvFile: null,
+            cvFileName: "",
+            skills: [
+                { id: 1, name: "HTML/CSS", color: "from-purple-vibrant to-pink-bright" },
+                { id: 2, name: "JavaScript", color: "from-blue-calm to-teal-fresh" },
+                { id: 3, name: "PHP", color: "from-orange-warm to-rose-soft" },
+                { id: 4, name: "MySQL", color: "from-green-fresh to-teal-fresh" }
+            ],
+            experiences: [
+                {
+                    id: 1,
+                    title: "Praktek Kerja Lapangan (PKL)",
+                    company: "PT. Teknologi Digital Indonesia",
+                    period: "Juni 2024 - Agustus 2024",
+                    description: "Mengembangkan aplikasi web menggunakan PHP dan MySQL. Belajar tentang workflow pengembangan software di industri."
+                }
+            ],
+            achievements: [
+                {
+                    id: 1,
+                    title: "Juara 2 Lomba Web Design",
+                    organization: "Tingkat Kabupaten Sidoarjo",
+                    year: "2024",
+                    icon: "fas fa-trophy",
+                    color: "from-yellow-400 to-orange-500"
+                },
+                {
+                    id: 2,
+                    title: "Sertifikat HTML & CSS",
+                    organization: "Dicoding Indonesia",
+                    year: "2024",
+                    icon: "fas fa-certificate",
+                    color: "from-blue-calm to-teal-fresh"
+                },
+                {
+                    id: 3,
+                    title: "Best Student Award",
+                    organization: "SMKS Krian 1 Sidoarjo",
+                    year: "2023",
+                    icon: "fas fa-medal",
+                    color: "from-green-500 to-emerald-600"
+                }
+            ]
+        };
+
+        // Admin credentials
+        const adminCredentials = {
+            username: "myzonneee",
+            password: "zona22"
+        };
+
+        let isAdminLoggedIn = false;
+        let currentTab = 'personal';
+
+        // Save data to localStorage
+        function saveToLocalStorage() {
+            localStorage.setItem('portfolioData', JSON.stringify(portfolioData));
+        }
+
+        // Mobile menu toggle
+        let mobileMenuOpen = false;
+        
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const line1 = document.getElementById('line1');
+            const line2 = document.getElementById('line2');
+            const line3 = document.getElementById('line3');
+            
+            mobileMenuOpen = !mobileMenuOpen;
+            
+            if (mobileMenuOpen) {
+                // Open menu
+                menu.style.maxHeight = '500px';
+                menu.classList.remove('max-h-0');
+                menu.classList.add('max-h-96');
+                
+                // Animate hamburger to X
+                line1.style.transform = 'rotate(45deg) translate(6px, 6px)';
+                line2.style.opacity = '0';
+                line3.style.transform = 'rotate(-45deg) translate(6px, -6px)';
+            } else {
+                // Close menu
+                menu.style.maxHeight = '0px';
+                menu.classList.remove('max-h-96');
+                menu.classList.add('max-h-0');
+                
+                // Animate X back to hamburger
+                line1.style.transform = 'rotate(0deg) translate(0px, 0px)';
+                line2.style.opacity = '1';
+                line3.style.transform = 'rotate(0deg) translate(0px, 0px)';
+            }
+        }
+        
+        // Close mobile menu when clicking on links
+        function closeMobileMenu() {
+            if (mobileMenuOpen) {
+                toggleMobileMenu();
+            }
+        }
+
+        // Download CV function
+        function downloadCV() {
+            // Check if custom CV file exists
+            if (portfolioData.cvFile && portfolioData.cvFileName) {
+                // Download the uploaded CV file
+                const link = document.createElement('a');
+                link.href = portfolioData.cvFile;
+                link.download = portfolioData.cvFileName;
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            } else {
+                // Download the specific CV file you mentioned
+                const link = document.createElement('a');
+                link.href = 'Hitam Cokelat Muda Modern Elegan Lulusan Baru CV Resume Riwayat Hidup_20241_20241203_204002_0000 (1).pdf';
+                link.download = 'CV_Zona_Putra_Pratama.pdf';
+                link.target = '_blank';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                
+                // Fallback: If file not found, create automatic CV
+                link.onerror = function() {
+                    const cvContent = `
+                CURRICULUM VITAE
+                
+                ${portfolioData.name}
+                ${portfolioData.title}
+                
+                KONTAK:
+                Telepon: ${portfolioData.phone}
+                Email: ${portfolioData.email}
+                Instagram: @${portfolioData.instagram}
+                Lokasi: ${portfolioData.location}
+                
+                TENTANG SAYA:
+                ${portfolioData.aboutText}
+                
+                PENDIDIKAN:
+                ${portfolioData.school}
+                Jurusan: ${portfolioData.major}
+                ${portfolioData.educationDesc}
+                
+                KEAHLIAN:
+                ${portfolioData.skills.map(skill => `• ${skill.name}`).join('\n')}
+                
+                PENGALAMAN:
+                ${portfolioData.experiences.map(exp => `
+                ${exp.title}
+                ${exp.company} | ${exp.period}
+                ${exp.description}
+                `).join('\n')}
+                
+                PRESTASI & SERTIFIKAT:
+                ${portfolioData.achievements.map(ach => `
+                ${ach.title}
+                ${ach.organization} | ${ach.year}
+                `).join('\n')}
+                
+                HOBI & MINAT:
+                ${portfolioData.hobbies}
+            `;
+                    
+                    // Create and download file
+                    const blob = new Blob([cvContent], { type: 'text/plain' });
+                    const url = window.URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = `CV_${portfolioData.name.replace(/\s+/g, '_')}.txt`;
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                    window.URL.revokeObjectURL(url);
+                };
+            }
+        }
+
+        // Tab management
+        function showTab(tabName) {
+            // Hide all tab contents
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.add('hidden');
+            });
+            
+            // Remove active class from all tabs
+            document.querySelectorAll('[id$="Tab"]').forEach(tab => {
+                tab.className = 'px-4 py-2 rounded-lg text-purple-vibrant hover:bg-purple-100 transition-all duration-300';
+            });
+            
+            // Show selected tab content
+            const tabContent = document.getElementById(tabName + 'TabContent');
+            if (tabContent) {
+                tabContent.classList.remove('hidden');
+            }
+            
+            // Add active class to selected tab
+            const activeTab = document.getElementById(tabName + 'Tab');
+            if (activeTab) {
+                activeTab.className = 'px-4 py-2 rounded-lg bg-gradient-to-r from-purple-vibrant to-pink-bright text-white font-semibold shadow-lg';
+            }
+            
+            currentTab = tabName;
+            
+            // Load data for specific tabs
+            if (tabName === 'experience') {
+                loadExperienceEditList();
+            } else if (tabName === 'achievements') {
+                loadAchievementEditList();
+            } else if (tabName === 'skills') {
+                loadSkillsEditList();
+            } else if (tabName === 'portfolio') {
+                loadPortfolioEditList();
+            }
+        }
+
+        // Profile image handling
+        function handleProfileImageUpload() {
+            const input = document.getElementById('profileImageInput');
+            input.addEventListener('change', function(e) {
+                const file = e.target.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        portfolioData.profileImage = e.target.result;
+                        updateProfileImage();
+                    };
+                    reader.readAsDataURL(file);
+                }
+            });
+        }
+
+        // CV file handling
+        function handleCVFileUpload() {
+            const input = document.getElementById('cvFileInput');
+            input.addEventListener('change', function(e) {
+                const file = e.target.files[0];
+                if (file) {
+                    // Check file size (max 10MB)
+                    if (file.size > 10 * 1024 * 1024) {
+                        alert('File terlalu besar! Maksimal 10MB.');
+                        input.value = '';
+                        return;
+                    }
+
+                    // Check file type
+                    const allowedTypes = ['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
+                    if (!allowedTypes.includes(file.type)) {
+                        alert('Format file tidak didukung! Gunakan PDF, DOC, atau DOCX.');
+                        input.value = '';
+                        return;
+                    }
+
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        portfolioData.cvFile = e.target.result;
+                        portfolioData.cvFileName = file.name;
+                        updateCVStatus();
+                    };
+                    reader.readAsDataURL(file);
+                }
+            });
+        }
+
+        function updateCVStatus() {
+            const statusElement = document.getElementById('currentCvStatus');
+            const removeBtn = document.getElementById('removeCvBtn');
+            
+            if (portfolioData.cvFile && portfolioData.cvFileName) {
+                statusElement.innerHTML = `<span class="text-green-600"><i class="fas fa-check-circle mr-1"></i>CV terupload: ${portfolioData.cvFileName}</span>`;
+                removeBtn.classList.remove('hidden');
+            } else {
+                statusElement.innerHTML = '<span class="text-gray-600">Status: Menggunakan CV otomatis</span>';
+                removeBtn.classList.add('hidden');
+            }
+        }
+
+        function removeCVFile() {
+            portfolioData.cvFile = null;
+            portfolioData.cvFileName = "";
+            document.getElementById('cvFileInput').value = '';
+            updateCVStatus();
+        }
+
+        function updateProfileImage() {
+            const profileImg = document.getElementById('profileImage');
+            const profileIcon = document.getElementById('profileIcon');
+            
+            if (portfolioData.profileImage) {
+                profileImg.src = portfolioData.profileImage;
+                profileImg.classList.remove('hidden');
+                profileIcon.classList.add('hidden');
+            } else {
+                profileImg.classList.add('hidden');
+                profileIcon.classList.remove('hidden');
+            }
+        }
+
+        // Experience management
+        function loadExperienceEditList() {
+            const container = document.getElementById('experienceEditList');
+            container.innerHTML = '';
+            
+            portfolioData.experiences.forEach(exp => {
+                const expDiv = document.createElement('div');
+                expDiv.className = 'bg-blue-50 p-4 rounded-lg border border-blue-light/30';
+                expDiv.innerHTML = `
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">Judul Posisi</label>
+                            <input type="text" value="${exp.title}" onchange="updateExperience(${exp.id}, 'title', this.value)" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-calm">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">Perusahaan/Organisasi</label>
+                            <input type="text" value="${exp.company}" onchange="updateExperience(${exp.id}, 'company', this.value)" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-calm">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">Periode</label>
+                            <input type="text" value="${exp.period}" onchange="updateExperience(${exp.id}, 'period', this.value)" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-calm">
+                        </div>
+                        <div class="flex items-end">
+                            <button onclick="removeExperience(${exp.id})" class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg transition-colors">
+                                <i class="fas fa-trash mr-2"></i>Hapus
+                            </button>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <label class="block text-gray-700 font-semibold mb-2">Deskripsi</label>
+                        <textarea onchange="updateExperience(${exp.id}, 'description', this.value)" rows="3" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-calm">${exp.description}</textarea>
+                    </div>
+                `;
+                container.appendChild(expDiv);
+            });
+        }
+
+        function addExperience() {
+            const newId = Math.max(...portfolioData.experiences.map(e => e.id), 0) + 1;
+            portfolioData.experiences.push({
+                id: newId,
+                title: "Posisi Baru",
+                company: "Nama Perusahaan",
+                period: "Bulan Tahun - Bulan Tahun",
+                description: "Deskripsi pengalaman kerja atau magang..."
+            });
+            loadExperienceEditList();
+        }
+
+        function updateExperience(id, field, value) {
+            const exp = portfolioData.experiences.find(e => e.id === id);
+            if (exp) {
+                exp[field] = value;
+            }
+        }
+
+        function removeExperience(id) {
+            portfolioData.experiences = portfolioData.experiences.filter(e => e.id !== id);
+            loadExperienceEditList();
+        }
+
+        // Skills management
+        function loadSkillsEditList() {
+            const container = document.getElementById('skillsEditList');
+            container.innerHTML = '';
+            
+            portfolioData.skills.forEach(skill => {
+                const skillDiv = document.createElement('div');
+                skillDiv.className = 'bg-purple-50 p-4 rounded-lg border border-purple-200/30';
+                skillDiv.innerHTML = `
+                    <div class="flex items-center gap-4">
+                        <div class="flex-1">
+                            <label class="block text-gray-700 font-semibold mb-2">Nama Keahlian</label>
+                            <input type="text" value="${skill.name}" onchange="updateSkill(${skill.id}, 'name', this.value)" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-purple-vibrant">
+                        </div>
+                        <div class="flex-1">
+                            <label class="block text-gray-700 font-semibold mb-2">Warna Gradient</label>
+                            <select onchange="updateSkill(${skill.id}, 'color', this.value)" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-purple-vibrant">
+                                <option value="from-purple-vibrant to-pink-bright" ${skill.color === 'from-purple-vibrant to-pink-bright' ? 'selected' : ''}>Purple-Pink</option>
+                                <option value="from-blue-calm to-teal-fresh" ${skill.color === 'from-blue-calm to-teal-fresh' ? 'selected' : ''}>Blue-Teal</option>
+                                <option value="from-orange-warm to-rose-soft" ${skill.color === 'from-orange-warm to-rose-soft' ? 'selected' : ''}>Orange-Rose</option>
+                                <option value="from-green-fresh to-teal-fresh" ${skill.color === 'from-green-fresh to-teal-fresh' ? 'selected' : ''}>Green-Teal</option>
+                                <option value="from-indigo-deep to-purple-vibrant" ${skill.color === 'from-indigo-deep to-purple-vibrant' ? 'selected' : ''}>Indigo-Purple</option>
+                                <option value="from-pink-bright to-rose-soft" ${skill.color === 'from-pink-bright to-rose-soft' ? 'selected' : ''}>Pink-Rose</option>
+                            </select>
+                        </div>
+                        <div class="flex items-end">
+                            <button onclick="removeSkill(${skill.id})" class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg transition-colors">
+                                <i class="fas fa-trash mr-2"></i>Hapus
+                            </button>
+                        </div>
+                    </div>
+                `;
+                container.appendChild(skillDiv);
+            });
+        }
+
+        function addSkill() {
+            const newId = Math.max(...portfolioData.skills.map(s => s.id), 0) + 1;
+            const colors = ['from-purple-vibrant to-pink-bright', 'from-blue-calm to-teal-fresh', 'from-orange-warm to-rose-soft', 'from-green-fresh to-teal-fresh'];
+            
+            portfolioData.skills.push({
+                id: newId,
+                name: "Keahlian Baru",
+                color: colors[Math.floor(Math.random() * colors.length)]
+            });
+            loadSkillsEditList();
+        }
+
+        function updateSkill(id, field, value) {
+            const skill = portfolioData.skills.find(s => s.id === id);
+            if (skill) {
+                skill[field] = value;
+            }
+        }
+
+        function removeSkill(id) {
+            portfolioData.skills = portfolioData.skills.filter(s => s.id !== id);
+            loadSkillsEditList();
+        }
+
+        // Portfolio management
+        function loadPortfolioEditList() {
+            const container = document.getElementById('portfolioEditList');
+            container.innerHTML = '';
+            
+            // Initialize portfolios if not exists
+            if (!portfolioData.portfolios) {
+                portfolioData.portfolios = [
+                    {
+                        id: 1,
+                        title: "Website Portfolio Personal",
+                        description: "Website portfolio responsif dengan desain modern menggunakan HTML, CSS, dan JavaScript",
+                        technologies: ["HTML", "CSS", "JavaScript", "Tailwind CSS"],
+                        url: "https://github.com/myzonneee/portfolio",
+                        image: "",
+                        category: "Web Development",
+                        status: "Completed"
+                    },
+                    {
+                        id: 2,
+                        title: "Sistem Manajemen Sekolah",
+                        description: "Aplikasi web untuk mengelola data siswa, guru, dan nilai dengan fitur CRUD lengkap",
+                        technologies: ["PHP", "MySQL", "Bootstrap", "jQuery"],
+                        url: "https://github.com/myzonneee/school-management",
+                        image: "",
+                        category: "Web Application",
+                        status: "In Progress"
+                    }
+                ];
+                saveToLocalStorage();
+            }
+            
+            portfolioData.portfolios.forEach(portfolio => {
+                const portfolioDiv = document.createElement('div');
+                portfolioDiv.className = 'bg-blue-50 p-4 rounded-lg border border-blue-light/30';
+                portfolioDiv.innerHTML = `
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">Nama Project</label>
+                            <input type="text" value="${portfolio.title}" onchange="updatePortfolio(${portfolio.id}, 'title', this.value)" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-calm">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">URL/Link Project</label>
+                            <input type="url" value="${portfolio.url}" onchange="validateAndUpdatePortfolioURL(${portfolio.id}, this.value)" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-calm" placeholder="https://github.com/username/project">
+                            <p class="text-xs text-gray-500 mt-1">Contoh: https://github.com/username/project atau https://myproject.com</p>
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">Kategori</label>
+                            <select onchange="updatePortfolio(${portfolio.id}, 'category', this.value)" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-calm">
+                                <option value="Web Development" ${portfolio.category === 'Web Development' ? 'selected' : ''}>Web Development</option>
+                                <option value="Web Application" ${portfolio.category === 'Web Application' ? 'selected' : ''}>Web Application</option>
+                                <option value="Mobile App" ${portfolio.category === 'Mobile App' ? 'selected' : ''}>Mobile App</option>
+                                <option value="Desktop App" ${portfolio.category === 'Desktop App' ? 'selected' : ''}>Desktop App</option>
+                                <option value="UI/UX Design" ${portfolio.category === 'UI/UX Design' ? 'selected' : ''}>UI/UX Design</option>
+                                <option value="Other" ${portfolio.category === 'Other' ? 'selected' : ''}>Lainnya</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">Status</label>
+                            <select onchange="updatePortfolio(${portfolio.id}, 'status', this.value)" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-calm">
+                                <option value="Completed" ${portfolio.status === 'Completed' ? 'selected' : ''}>Selesai</option>
+                                <option value="In Progress" ${portfolio.status === 'In Progress' ? 'selected' : ''}>Dalam Pengembangan</option>
+                                <option value="Planning" ${portfolio.status === 'Planning' ? 'selected' : ''}>Perencanaan</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <label class="block text-gray-700 font-semibold mb-2">Deskripsi Project</label>
+                        <textarea onchange="updatePortfolio(${portfolio.id}, 'description', this.value)" rows="3" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-calm">${portfolio.description}</textarea>
+                    </div>
+                    <div class="mt-4">
+                        <label class="block text-gray-700 font-semibold mb-2">Teknologi (pisahkan dengan koma)</label>
+                        <input type="text" value="${portfolio.technologies.join(', ')}" onchange="updatePortfolioTechnologies(${portfolio.id}, this.value)" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-calm" placeholder="HTML, CSS, JavaScript, React">
+                    </div>
+                    <div class="mt-4 flex justify-end">
+                        <button onclick="removePortfolio(${portfolio.id})" class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg transition-colors">
+                            <i class="fas fa-trash mr-2"></i>Hapus Project
+                        </button>
+                    </div>
+                `;
+                container.appendChild(portfolioDiv);
+            });
+        }
+
+        function addPortfolio() {
+            const newId = Math.max(...portfolioData.portfolios.map(p => p.id), 0) + 1;
+            portfolioData.portfolios.push({
+                id: newId,
+                title: "Project Baru",
+                description: "Deskripsi project baru...",
+                technologies: ["HTML", "CSS", "JavaScript"],
+                url: "https://github.com/username/project",
+                image: "",
+                category: "Web Development",
+                status: "Planning"
+            });
+            loadPortfolioEditList();
+        }
+
+        function updatePortfolio(id, field, value) {
+            const portfolio = portfolioData.portfolios.find(p => p.id === id);
+            if (portfolio) {
+                portfolio[field] = value;
+            }
+        }
+
+        function validateAndUpdatePortfolioURL(id, url) {
+            // Basic URL validation
+            if (url && !url.startsWith('http://') && !url.startsWith('https://')) {
+                url = 'https://' + url;
+            }
+            
+            // Validate URL format
+            try {
+                if (url) {
+                    new URL(url);
+                }
+                updatePortfolio(id, 'url', url);
+            } catch (e) {
+                alert('Format URL tidak valid! Gunakan format: https://example.com');
+                // Reset to previous value
+                const portfolio = portfolioData.portfolios.find(p => p.id === id);
+                if (portfolio) {
+                    event.target.value = portfolio.url;
+                }
+            }
+        }
+
+        function updatePortfolioTechnologies(id, value) {
+            const portfolio = portfolioData.portfolios.find(p => p.id === id);
+            if (portfolio) {
+                portfolio.technologies = value.split(',').map(tech => tech.trim()).filter(tech => tech);
+            }
+        }
+
+        function removePortfolio(id) {
+            portfolioData.portfolios = portfolioData.portfolios.filter(p => p.id !== id);
+            loadPortfolioEditList();
+        }
+
+        // Achievement management
+        function loadAchievementEditList() {
+            const container = document.getElementById('achievementEditList');
+            container.innerHTML = '';
+            
+            portfolioData.achievements.forEach(ach => {
+                const achDiv = document.createElement('div');
+                achDiv.className = 'bg-blue-50 p-4 rounded-lg border border-blue-light/30';
+                achDiv.innerHTML = `
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">Nama Prestasi/Sertifikat</label>
+                            <input type="text" value="${ach.title}" onchange="updateAchievement(${ach.id}, 'title', this.value)" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-calm">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">Organisasi/Penyelenggara</label>
+                            <input type="text" value="${ach.organization}" onchange="updateAchievement(${ach.id}, 'organization', this.value)" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-calm">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">Tahun</label>
+                            <input type="text" value="${ach.year}" onchange="updateAchievement(${ach.id}, 'year', this.value)" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-calm">
+                        </div>
+                        <div class="flex items-end">
+                            <button onclick="removeAchievement(${ach.id})" class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg transition-colors">
+                                <i class="fas fa-trash mr-2"></i>Hapus
+                            </button>
+                        </div>
+                    </div>
+                `;
+                container.appendChild(achDiv);
+            });
+        }
+
+        function addAchievement() {
+            const newId = Math.max(...portfolioData.achievements.map(a => a.id), 0) + 1;
+            const colors = ['from-yellow-400 to-orange-500', 'from-blue-calm to-teal-fresh', 'from-green-500 to-emerald-600', 'from-purple-500 to-pink-500'];
+            const icons = ['fas fa-trophy', 'fas fa-certificate', 'fas fa-medal', 'fas fa-award'];
+            
+            portfolioData.achievements.push({
+                id: newId,
+                title: "Prestasi Baru",
+                organization: "Nama Organisasi",
+                year: "2024",
+                icon: icons[Math.floor(Math.random() * icons.length)],
+                color: colors[Math.floor(Math.random() * colors.length)]
+            });
+            loadAchievementEditList();
+        }
+
+        function updateAchievement(id, field, value) {
+            const ach = portfolioData.achievements.find(a => a.id === id);
+            if (ach) {
+                ach[field] = value;
+            }
+        }
+
+        function removeAchievement(id) {
+            portfolioData.achievements = portfolioData.achievements.filter(a => a.id !== id);
+            loadAchievementEditList();
+        }
+
+        // Admin login functions
+        function showAdminLogin() {
+            document.getElementById('adminLoginModal').classList.remove('hidden');
+            document.getElementById('adminLoginModal').classList.add('flex');
+            document.getElementById('loginError').classList.add('hidden');
+        }
+
+        function hideAdminLogin() {
+            document.getElementById('adminLoginModal').classList.add('hidden');
+            document.getElementById('adminLoginModal').classList.remove('flex');
+            document.getElementById('adminUsername').value = '';
+            document.getElementById('adminPassword').value = '';
+            document.getElementById('loginError').classList.add('hidden');
+        }
+
+        function handleAdminLogin(event) {
+            event.preventDefault();
+            const username = document.getElementById('adminUsername').value;
+            const password = document.getElementById('adminPassword').value;
+
+            if (username === adminCredentials.username && password === adminCredentials.password) {
+                isAdminLoggedIn = true;
+                hideAdminLogin();
+                showAdminPanel();
+            } else {
+                const errorDiv = document.getElementById('loginError');
+                errorDiv.textContent = 'Username atau password salah!';
+                errorDiv.classList.remove('hidden');
+            }
+        }
+
+        function showAdminPanel() {
+            // Load current data into form fields
+            document.getElementById('editName').value = portfolioData.name;
+            document.getElementById('editTitle').value = portfolioData.title;
+            document.getElementById('editHeroDescription').value = portfolioData.heroDescription;
+            document.getElementById('editAboutText').value = portfolioData.aboutText;
+            document.getElementById('editHobbies').value = portfolioData.hobbies;
+            document.getElementById('editSchool').value = portfolioData.school;
+            document.getElementById('editMajor').value = portfolioData.major;
+            document.getElementById('editEducationDesc').value = portfolioData.educationDesc;
+            document.getElementById('editPhone').value = portfolioData.phone;
+            document.getElementById('editEmail').value = portfolioData.email;
+            document.getElementById('editInstagram').value = portfolioData.instagram;
+            document.getElementById('editLocation').value = portfolioData.location;
+
+            // Setup profile image upload
+            handleProfileImageUpload();
+            updateProfileImage();
+
+            // Setup CV file upload
+            handleCVFileUpload();
+            updateCVStatus();
+
+            // Show admin panel
+            document.getElementById('adminPanel').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+            
+            // Show default tab
+            showTab('personal');
+        }
+
+        function logoutAdmin() {
+            isAdminLoggedIn = false;
+            document.getElementById('adminPanel').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        function saveChanges() {
+            // Update data from form fields
+            portfolioData.name = document.getElementById('editName').value;
+            portfolioData.title = document.getElementById('editTitle').value;
+            portfolioData.heroDescription = document.getElementById('editHeroDescription').value;
+            portfolioData.aboutText = document.getElementById('editAboutText').value;
+            portfolioData.hobbies = document.getElementById('editHobbies').value;
+            portfolioData.school = document.getElementById('editSchool').value;
+            portfolioData.major = document.getElementById('editMajor').value;
+            portfolioData.educationDesc = document.getElementById('editEducationDesc').value;
+            portfolioData.phone = document.getElementById('editPhone').value;
+            portfolioData.email = document.getElementById('editEmail').value;
+            portfolioData.instagram = document.getElementById('editInstagram').value;
+            portfolioData.location = document.getElementById('editLocation').value;
+
+            // Save to localStorage for permanent storage
+            saveToLocalStorage();
+
+            // Update the website content
+            updateWebsiteContent();
+
+            // Show success message
+            const successDiv = document.getElementById('saveSuccess');
+            successDiv.classList.remove('hidden');
+            setTimeout(() => {
+                successDiv.classList.add('hidden');
+            }, 3000);
+        }
+
+        function updateWebsiteContent() {
+            // Update hero section
+            document.getElementById('heroName').textContent = portfolioData.name;
+            document.getElementById('heroTitle').textContent = portfolioData.title;
+            document.getElementById('heroDescription').textContent = portfolioData.heroDescription;
+            updateProfileImage();
+
+            // Update about section
+            document.getElementById('aboutText').textContent = portfolioData.aboutText;
+            document.getElementById('hobbiesText').textContent = portfolioData.hobbies;
+            updateSkillsSection();
+
+            // Update education section
+            document.getElementById('schoolName').textContent = portfolioData.school;
+            document.getElementById('major').textContent = portfolioData.major;
+            document.getElementById('educationDescription').textContent = portfolioData.educationDesc;
+
+            // Update experience section
+            updateExperienceSection();
+
+            // Update achievements section
+            updateAchievementsSection();
+
+            // Update portfolio section
+            updatePortfolioSection();
+
+            // Update contact section
+            document.getElementById('phoneLink').textContent = portfolioData.phone;
+            document.getElementById('phoneLink').href = `tel:${portfolioData.phone}`;
+            document.getElementById('emailLink').textContent = portfolioData.email;
+            document.getElementById('emailLink').href = `mailto:${portfolioData.email}`;
+            document.getElementById('instagramLink').textContent = `@${portfolioData.instagram}`;
+            document.getElementById('instagramLink').href = `https://instagram.com/${portfolioData.instagram}`;
+            document.getElementById('locationText').textContent = portfolioData.location;
+        }
+
+        function updateSkillsSection() {
+            const container = document.getElementById('skillsList');
+            container.innerHTML = '';
+            
+            portfolioData.skills.forEach(skill => {
+                const skillSpan = document.createElement('span');
+                skillSpan.className = `bg-gradient-to-r ${skill.color} text-white px-3 py-1 rounded-full text-sm`;
+                skillSpan.textContent = skill.name;
+                container.appendChild(skillSpan);
+            });
+        }
+
+        function updateExperienceSection() {
+            const container = document.getElementById('experienceList');
+            container.innerHTML = '';
+            
+            portfolioData.experiences.forEach(exp => {
+                const expDiv = document.createElement('div');
+                expDiv.className = 'bg-white/80 backdrop-blur-sm rounded-xl shadow-lg p-6 border border-blue-light/20';
+                expDiv.innerHTML = `
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 bg-gradient-to-br from-blue-calm to-teal-fresh rounded-full flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-briefcase text-white"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold text-blue-deep mb-2">${exp.title}</h3>
+                            <p class="text-teal-fresh font-semibold mb-2">${exp.company}</p>
+                            <p class="text-gray-600 mb-2">${exp.period}</p>
+                            <p class="text-gray-700">${exp.description}</p>
+                        </div>
+                    </div>
+                `;
+                container.appendChild(expDiv);
+            });
+        }
+
+        function updateAchievementsSection() {
+            const container = document.getElementById('achievementsList');
+            container.innerHTML = '';
+            
+            portfolioData.achievements.forEach(ach => {
+                const achDiv = document.createElement('div');
+                achDiv.className = 'bg-white/80 backdrop-blur-sm rounded-xl shadow-lg p-6 border border-blue-light/20 text-center';
+                achDiv.innerHTML = `
+                    <div class="w-16 h-16 bg-gradient-to-br ${ach.color} rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="${ach.icon} text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-blue-deep mb-2">${ach.title}</h3>
+                    <p class="text-teal-fresh font-semibold mb-2">${ach.organization}</p>
+                    <p class="text-gray-600 text-sm">${ach.year}</p>
+                `;
+                container.appendChild(achDiv);
+            });
+        }
+
+        function updatePortfolioSection() {
+            const container = document.getElementById('portfolioList');
+            container.innerHTML = '';
+            
+            // Initialize portfolios if not exists
+            if (!portfolioData.portfolios) {
+                portfolioData.portfolios = [
+                    {
+                        id: 1,
+                        title: "Website Portfolio Personal",
+                        description: "Website portfolio responsif dengan desain modern menggunakan HTML, CSS, dan JavaScript",
+                        technologies: ["HTML", "CSS", "JavaScript", "Tailwind CSS"],
+                        url: "https://github.com/myzonneee/portfolio",
+                        image: "",
+                        category: "Web Development",
+                        status: "Completed"
+                    },
+                    {
+                        id: 2,
+                        title: "Sistem Manajemen Sekolah",
+                        description: "Aplikasi web untuk mengelola data siswa, guru, dan nilai dengan fitur CRUD lengkap",
+                        technologies: ["PHP", "MySQL", "Bootstrap", "jQuery"],
+                        url: "https://github.com/myzonneee/school-management",
+                        image: "",
+                        category: "Web Application",
+                        status: "In Progress"
+                    }
+                ];
+                saveToLocalStorage();
+            }
+            
+            portfolioData.portfolios.forEach(portfolio => {
+                const statusColors = {
+                    'Completed': 'bg-green-100 text-green-800',
+                    'In Progress': 'bg-yellow-100 text-yellow-800',
+                    'Planning': 'bg-blue-100 text-blue-800'
+                };
+
+                const statusTexts = {
+                    'Completed': 'Selesai',
+                    'In Progress': 'Dalam Pengembangan',
+                    'Planning': 'Perencanaan'
+                };
+
+                const portfolioDiv = document.createElement('div');
+                portfolioDiv.className = 'bg-white/80 backdrop-blur-sm rounded-xl shadow-lg p-6 border border-blue-light/20 hover:shadow-xl transition-all duration-300 transform hover:scale-105';
+                portfolioDiv.innerHTML = `
+                    <div class="mb-4">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold text-blue-deep">${portfolio.title}</h3>
+                            <span class="px-2 py-1 rounded-full text-xs font-semibold ${statusColors[portfolio.status]}">${statusTexts[portfolio.status]}</span>
+                        </div>
+                        <p class="text-sm text-purple-600 font-semibold mb-2">${portfolio.category}</p>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-4">${portfolio.description}</p>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <div class="flex flex-wrap gap-2">
+                            ${portfolio.technologies.map(tech => `
+                                <span class="bg-gradient-to-r from-purple-100 to-pink-100 text-purple-700 px-2 py-1 rounded-full text-xs font-medium">${tech}</span>
+                            `).join('')}
+                        </div>
+                    </div>
+                    
+                    <div class="flex justify-between items-center">
+                        <a href="${portfolio.url}" target="_blank" rel="noopener noreferrer" class="bg-gradient-to-r from-blue-calm to-teal-fresh hover:from-blue-600 hover:to-teal-600 text-white px-4 py-2 rounded-lg transition-all duration-300 font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 text-sm">
+                            <i class="fas fa-external-link-alt mr-2"></i>Lihat Project
+                        </a>
+                        <div class="text-xs text-gray-500">
+                            <i class="fas fa-folder mr-1"></i>${portfolio.category}
+                        </div>
+                    </div>
+                `;
+                container.appendChild(portfolioDiv);
+            });
+        }
+
+        // Smooth scrolling for navigation links
+        function initializeNavigation() {
+            // Desktop navigation
+            document.querySelectorAll('.nav-link').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const target = document.querySelector(targetId);
+                    if (target) {
+                        // Add offset for fixed navbar
+                        const navHeight = 80;
+                        const targetPosition = target.offsetTop - navHeight;
+                        
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Update URL without triggering page reload
+                        history.pushState(null, null, targetId);
+                    }
+                });
+            });
+
+            // Mobile navigation
+            document.querySelectorAll('.mobile-nav-link').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const target = document.querySelector(targetId);
+                    if (target) {
+                        // Add offset for fixed navbar
+                        const navHeight = 80;
+                        const targetPosition = target.offsetTop - navHeight;
+                        
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Update URL without triggering page reload
+                        history.pushState(null, null, targetId);
+                    }
+                    closeMobileMenu();
+                });
+            });
+
+            // Handle direct URL access to sections
+            function handleDirectSectionAccess() {
+                const hash = window.location.hash;
+                if (hash) {
+                    setTimeout(() => {
+                        const target = document.querySelector(hash);
+                        if (target) {
+                            const navHeight = 80;
+                            const targetPosition = target.offsetTop - navHeight;
+                            window.scrollTo({
+                                top: targetPosition,
+                                behavior: 'smooth'
+                            });
+                        }
+                    }, 100);
+                }
+            }
+
+            // Handle browser back/forward buttons
+            window.addEventListener('popstate', handleDirectSectionAccess);
+            
+            // Handle initial page load with hash
+            handleDirectSectionAccess();
+        }
+
+
+
+        // Auto-save functionality
+        function autoSave() {
+            saveToLocalStorage();
+        }
+
+        // Enhanced save with backup
+        function saveToLocalStorage() {
+            try {
+                // Save main data
+                localStorage.setItem('portfolioData', JSON.stringify(portfolioData));
+                
+                // Create backup with timestamp
+                const backup = {
+                    data: portfolioData,
+                    timestamp: new Date().toISOString(),
+                    version: '1.0'
+                };
+                localStorage.setItem('portfolioBackup', JSON.stringify(backup));
+                
+                console.log('Data berhasil disimpan secara permanen');
+            } catch (error) {
+                console.error('Error saving data:', error);
+                alert('Gagal menyimpan data. Storage mungkin penuh.');
+            }
+        }
+
+        // Load data with fallback
+        function loadFromLocalStorage() {
+            try {
+                const savedData = localStorage.getItem('portfolioData');
+                if (savedData) {
+                    const parsed = JSON.parse(savedData);
+                    // Merge with default data to ensure all properties exist
+                    portfolioData = { ...portfolioData, ...parsed };
+                    console.log('Data berhasil dimuat dari penyimpanan');
+                    return true;
+                }
+            } catch (error) {
+                console.error('Error loading data:', error);
+                // Try to load from backup
+                try {
+                    const backupData = localStorage.getItem('portfolioBackup');
+                    if (backupData) {
+                        const backup = JSON.parse(backupData);
+                        portfolioData = { ...portfolioData, ...backup.data };
+                        console.log('Data berhasil dimuat dari backup');
+                        return true;
+                    }
+                } catch (backupError) {
+                    console.error('Error loading backup:', backupError);
+                }
+            }
+            return false;
+        }
+
+        // Export data function
+        function exportData() {
+            const dataStr = JSON.stringify(portfolioData, null, 2);
+            const dataBlob = new Blob([dataStr], {type: 'application/json'});
+            const url = URL.createObjectURL(dataBlob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = `portfolio_backup_${new Date().toISOString().split('T')[0]}.json`;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            URL.revokeObjectURL(url);
+        }
+
+        // Import data function
+        function importData(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    try {
+                        const importedData = JSON.parse(e.target.result);
+                        portfolioData = { ...portfolioData, ...importedData };
+                        saveToLocalStorage();
+                        updateWebsiteContent();
+                        alert('Data berhasil diimpor!');
+                        
+                        // Refresh admin panel if open
+                        if (isAdminLoggedIn) {
+                            showAdminPanel();
+                        }
+                    } catch (error) {
+                        alert('File tidak valid atau rusak!');
+                    }
+                };
+                reader.readAsText(file);
+            }
+            // Reset file input
+            event.target.value = '';
+        }
+
+        // Reset to default data
+        function resetToDefault() {
+            if (confirm('Apakah Anda yakin ingin mengembalikan semua data ke pengaturan default? Semua perubahan akan hilang!')) {
+                // Clear localStorage
+                localStorage.removeItem('portfolioData');
+                localStorage.removeItem('portfolioBackup');
+                
+                // Reset to original default data
+                portfolioData = {
+                    name: "Zona Putra Pratama",
+                    title: "Rekayasa Perangkat Lunak",
+                    heroDescription: "Siswa SMK dengan passion di bidang pengembangan perangkat lunak. Berfokus pada teknologi web modern dan pengembangan aplikasi.",
+                    aboutText: "Saya adalah siswa yang berdedikasi dalam bidang Rekayasa Perangkat Lunak. Memiliki minat besar dalam pengembangan web, mobile apps, dan teknologi terkini. Selalu antusias untuk belajar hal-hal baru dan mengembangkan keterampilan programming.",
+                    hobbies: "Coding, membaca artikel teknologi, bermain game, dan eksplorasi framework baru.",
+                    school: "SMKS Krian 1 Sidoarjo",
+                    major: "Rekayasa Perangkat Lunak",
+                    educationDesc: "Sedang menempuh pendidikan di SMK dengan fokus pada pengembangan perangkat lunak. Mempelajari berbagai bahasa pemrograman, database management, dan metodologi pengembangan software.",
+                    phone: "088989423247",
+                    email: "zonaputrapratama98@gmail.com",
+                    instagram: "myzonneee",
+                    location: "Sidoarjo, Jawa Timur",
+                    profileImage: "",
+                    cvFile: null,
+                    cvFileName: "",
+                    skills: [
+                        { id: 1, name: "HTML/CSS", color: "from-purple-vibrant to-pink-bright" },
+                        { id: 2, name: "JavaScript", color: "from-blue-calm to-teal-fresh" },
+                        { id: 3, name: "PHP", color: "from-orange-warm to-rose-soft" },
+                        { id: 4, name: "MySQL", color: "from-green-fresh to-teal-fresh" }
+                    ],
+                    experiences: [
+                        {
+                            id: 1,
+                            title: "Praktek Kerja Lapangan (PKL)",
+                            company: "PT. Teknologi Digital Indonesia",
+                            period: "Juni 2024 - Agustus 2024",
+                            description: "Mengembangkan aplikasi web menggunakan PHP dan MySQL. Belajar tentang workflow pengembangan software di industri."
+                        }
+                    ],
+                    achievements: [
+                        {
+                            id: 1,
+                            title: "Juara 2 Lomba Web Design",
+                            organization: "Tingkat Kabupaten Sidoarjo",
+                            year: "2024",
+                            icon: "fas fa-trophy",
+                            color: "from-yellow-400 to-orange-500"
+                        },
+                        {
+                            id: 2,
+                            title: "Sertifikat HTML & CSS",
+                            organization: "Dicoding Indonesia",
+                            year: "2024",
+                            icon: "fas fa-certificate",
+                            color: "from-blue-calm to-teal-fresh"
+                        },
+                        {
+                            id: 3,
+                            title: "Best Student Award",
+                            organization: "SMKS Krian 1 Sidoarjo",
+                            year: "2023",
+                            icon: "fas fa-medal",
+                            color: "from-green-500 to-emerald-600"
+                        }
+                    ],
+                    portfolios: [
+                        {
+                            id: 1,
+                            title: "Website Portfolio Personal",
+                            description: "Website portfolio responsif dengan desain modern menggunakan HTML, CSS, dan JavaScript",
+                            technologies: ["HTML", "CSS", "JavaScript", "Tailwind CSS"],
+                            url: "https://github.com/myzonneee/portfolio",
+                            image: "",
+                            category: "Web Development",
+                            status: "Completed"
+                        },
+                        {
+                            id: 2,
+                            title: "Sistem Manajemen Sekolah",
+                            description: "Aplikasi web untuk mengelola data siswa, guru, dan nilai dengan fitur CRUD lengkap",
+                            technologies: ["PHP", "MySQL", "Bootstrap", "jQuery"],
+                            url: "https://github.com/myzonneee/school-management",
+                            image: "",
+                            category: "Web Application",
+                            status: "In Progress"
+                        }
+                    ]
+                };
+                
+                // Save the reset data
+                saveToLocalStorage();
+                
+                // Update website content
+                updateWebsiteContent();
+                
+                // Refresh admin panel if open
+                if (isAdminLoggedIn) {
+                    showAdminPanel();
+                }
+                
+                alert('Data berhasil direset ke pengaturan default!');
+            }
+        }
+
+        // Initialize website content on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load saved data first
+            loadFromLocalStorage();
+            // Then update content
+            updateWebsiteContent();
+            
+            // Initialize navigation
+            initializeNavigation();
+            
+            // Auto-save every 30 seconds
+            setInterval(autoSave, 30000);
+            
+            console.log('Portfolio website berhasil dimuat dengan data tersimpan');
+        });
+
+        // Save data when page is about to unload
+        window.addEventListener('beforeunload', function() {
+            autoSave();
+        });
+
+        // Close admin login modal when clicking outside
+        document.addEventListener('click', function(e) {
+            const modal = document.getElementById('adminLoginModal');
+            if (e.target === modal) {
+                hideAdminLogin();
+            }
+        });
+
+        // Initialize website content
+        loadFromLocalStorage();
+        updateWebsiteContent();
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'983f37afe0434038',t:'MTc1ODY4NDc3Ny4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
